@@ -53,14 +53,20 @@ public class StudentList {
         
             System.out.println("Enter the student name");
             String name = input.nextLine();
+            System.out.println("Enter the student name");
+            String address = input.nextLine();
+            
             Student student = new Student(name);
+            student.setAddress(address);
             studentList[i] = student; // put student in the array
         }
         
         System.out.println("Now we print them out");
         
         for (Student student: studentList) {
-            System.out.println(student.getName());
+            String format = "Student %s lives at %s\n";
+            System.out.printf(format,
+                    student.getName(),student.getAddress());
         }
         
     }
